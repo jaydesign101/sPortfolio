@@ -54,8 +54,6 @@ header{
     gap: 20px;
     height: 100%;
     width: fit-content;
-
-
     li{
       width: 132px;
       height: inherit;
@@ -97,7 +95,7 @@ header{
   font-size: 24px;
   font-weight: 300;
   white-space: nowrap;
-  z-index: 10;
+  z-index: -10;
   color: #A2A2A2;
 }
 
@@ -113,6 +111,7 @@ header{
   // +++ edit
   background-position: center bottom;
   background-color: #F0F0F2;
+  z-index: -11;
   .greeting{
     position: absolute;
     left:50%;
@@ -120,6 +119,7 @@ header{
     transform: translateX(-50%);
     text-align: center;
     line-height: 2em;
+    word-break: keep-all;
     p{
       .bold{
         font-weight: 700;
@@ -330,8 +330,7 @@ header{
       
       .items{
         display: flex;
-        
-        
+
         a{
           display: block;
           
@@ -414,7 +413,7 @@ footer{
 
 
 
-
+/* PC 추가 수정 */
 @media (max-width : 1499px){
   .inner{
     padding-left: 100px;
@@ -429,17 +428,60 @@ footer{
     }
   }
 }
+
+/* 태블릿 */
 @media (max-width : 1027px){
   body{
     background-color:aliceblue;
   }
   .inner{
-    width: 800px;
+    width: 100%;
   }
   header{
-    display: flex;
-    flex-direction: column;
+    ul.mega-menu{
+      gap: 0;
+    }
   }
 
+}
+@media (max-width : 767px){
+  body{
+    background-color:antiquewhite;
+  }
+  .inner{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  header{
+    flex-direction: column;
+    padding: 0;
+    height: 60px;
+    .logo{
+      font-size: 14px;
+      padding: 5px;
+    }
+    ul.mega-menu{
+      width: 100%;
+      border-top: 1px solid #000;
+      gap: 0;
+      li{
+        flex: 1;
+        border-right: 1px solid #000;
+        &:last-child{
+          border-right: 1px solid transparent;
+        }
+        a{
+          font-size: 14px;
+          &::after{
+           display: none;
+          }
+        }
+      }
+    }
+  }
+  .side-name{
+
+    color: #e4e4e4;
+  }
 
 }

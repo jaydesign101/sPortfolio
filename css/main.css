@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* fonts *******************/
 @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* COMMON *******************/
@@ -90,7 +91,7 @@ header ul.mega-menu li a:hover::after {
   font-size: 24px;
   font-weight: 300;
   white-space: nowrap;
-  z-index: 10;
+  z-index: -10;
   color: #A2A2A2;
 }
 
@@ -104,6 +105,7 @@ header ul.mega-menu li a:hover::after {
   position: relative;
   background-position: center bottom;
   background-color: #F0F0F2;
+  z-index: -11;
 }
 #home .greeting {
   position: absolute;
@@ -112,6 +114,7 @@ header ul.mega-menu li a:hover::after {
   transform: translateX(-50%);
   text-align: center;
   line-height: 2em;
+  word-break: keep-all;
 }
 #home .greeting p .bold {
   font-weight: 700;
@@ -379,6 +382,7 @@ footer {
   border-top: 1px solid #000;
 }
 
+/* PC 추가 수정 */
 @media (max-width: 1499px) {
   .inner {
     padding-left: 100px;
@@ -391,15 +395,54 @@ footer {
     left: 40px;
   }
 }
+/* 태블릿 */
 @media (max-width: 1027px) {
   body {
     background-color: aliceblue;
   }
   .inner {
-    width: 800px;
+    width: 100%;
+  }
+  header ul.mega-menu {
+    gap: 0;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    background-color: antiquewhite;
+  }
+  .inner {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   header {
-    display: flex;
     flex-direction: column;
+    padding: 0;
+    height: 60px;
+  }
+  header .logo {
+    font-size: 14px;
+    padding: 5px;
+  }
+  header ul.mega-menu {
+    width: 100%;
+    border-top: 1px solid #000;
+    gap: 0;
+  }
+  header ul.mega-menu li {
+    flex: 1;
+    border-right: 1px solid #000;
+  }
+  header ul.mega-menu li:last-child {
+    border-right: 1px solid transparent;
+  }
+  header ul.mega-menu li a {
+    font-size: 14px;
+  }
+  header ul.mega-menu li a::after {
+    display: none;
+  }
+  .side-name {
+    color: #e4e4e4;
   }
 }
