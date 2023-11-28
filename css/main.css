@@ -24,6 +24,11 @@ ul li {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* COMMON Variable *******************/
 /* HEADER *******************/
 header {
@@ -56,8 +61,6 @@ header ul.mega-menu li {
   position: relative;
 }
 header ul.mega-menu li a {
-  text-decoration: none;
-  color: inherit;
   width: 100%;
   height: inherit;
   display: flex;
