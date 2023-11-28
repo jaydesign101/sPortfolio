@@ -256,7 +256,7 @@ header ul.mega-menu li a:hover::after {
 .spacing {
   width: 100%;
   max-width: 172px;
-  min-width: 20px;
+  min-width: 60px;
   flex: 1;
 }
 
@@ -318,22 +318,27 @@ header ul.mega-menu li a:hover::after {
 #works .inner .items-wrap .items {
   display: flex;
 }
-#works .inner .items-wrap .items .item {
+#works .inner .items-wrap .items a {
+  display: block;
   width: 511px;
   height: 460px;
+}
+#works .inner .items-wrap .items a .item {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
-#works .inner .items-wrap .items .item.right {
+#works .inner .items-wrap .items a .item.right {
   transform: translateY(230px);
 }
-#works .inner .items-wrap .items .item .img {
+#works .inner .items-wrap .items a .item .img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
   cursor: pointer;
 }
-#works .inner .items-wrap .items .item .img img {
+#works .inner .items-wrap .items a .item .img img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -341,11 +346,11 @@ header ul.mega-menu li a:hover::after {
   height: 100%;
   filter: grayscale(10);
 }
-#works .inner .items-wrap .items .item .img:hover img {
+#works .inner .items-wrap .items a .item .img:hover img {
   height: 120%;
   filter: grayscale(0);
 }
-#works .inner .items-wrap .items .item .text {
+#works .inner .items-wrap .items a .item .text {
   position: absolute;
   bottom: -80px;
   left: 20px;
@@ -353,12 +358,12 @@ header ul.mega-menu li a:hover::after {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
 }
-#works .inner .items-wrap .items .item .text .works .works-title {
+#works .inner .items-wrap .items a .item .text .works .works-title {
   font-size: 16px;
   font-weight: 600;
   color: #000;
 }
-#works .inner .items-wrap .items .item .text .works .works-date {
+#works .inner .items-wrap .items a .item .text .works .works-date {
   font-size: 14px;
   color: #A2A2A2;
   margin-top: 14px;

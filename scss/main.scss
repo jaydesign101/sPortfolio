@@ -266,7 +266,7 @@ header{
       @at-root .spacing{
         width: 100%;
         max-width: 172px;
-        min-width: 20px;
+        min-width: 60px;
         flex: 1;
       }
       ul.info{
@@ -327,56 +327,66 @@ header{
       display: flex;
       flex-direction: column;
       gap: 240px;
+      
       .items{
         display: flex;
-        .item{
+        
+        
+        a{
+          display: block;
+          
           width: 511px;
           height: 460px;
-          position: relative;
-          &.left{}
-          &.right{transform: translateY(230px);}
-          .img{
+          .item{
             width: 100%;
             height: 100%;
-            overflow: hidden;
             position: relative;
-            cursor: pointer;
-            img{
-              position: absolute;
-              top:50%;
-              left:50%;
-              transform: translate(-50%, -50%);
+            &.left{}
+            &.right{transform: translateY(230px);}
+            .img{
+              width: 100%;
               height: 100%;
-              filter: grayscale(10);
-            }
-            &:hover{
+              overflow: hidden;
+              position: relative;
+              cursor: pointer;
               img{
-                height: 120%;
-                filter: grayscale(0);
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+                filter: grayscale(10);
+              }
+              &:hover{
+                img{
+                  height: 120%;
+                  filter: grayscale(0);
+                }
               }
             }
-          }
-          .text{
-            position: absolute;
-            bottom: -80px;
-            left:20px;
-            padding: 24px 20px;
-            width: 100%;
-            background-color: rgba(255,255,255,.9);
-            .works{
-              .works-title{
-                font-size: 16px;
-                font-weight: 600;
-                color: #000;
-              }
-              .works-date{
-                font-size: 14px;
-                color: #A2A2A2;
-                margin-top: 14px;
+            .text{
+              position: absolute;
+              bottom: -80px;
+              left:20px;
+              padding: 24px 20px;
+              width: 100%;
+              background-color: rgba(255,255,255,.9);
+              .works{
+                .works-title{
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #000;
+                }
+                .works-date{
+                  font-size: 14px;
+                  color: #A2A2A2;
+                  margin-top: 14px;
+                }
               }
             }
           }
         }
+
         
         
       }
