@@ -48,17 +48,24 @@ header ul.mega-menu {
   display: flex;
   gap: 20px;
   height: 100%;
+  width: fit-content;
 }
 header ul.mega-menu li {
+  width: 132px;
+  height: inherit;
+  position: relative;
+}
+header ul.mega-menu li a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 132px;
-  height: 100%;
-  position: relative;
   cursor: pointer;
 }
-header ul.mega-menu li::after {
+header ul.mega-menu li a::after {
   content: "";
   display: block;
   position: absolute;
@@ -68,7 +75,7 @@ header ul.mega-menu li::after {
   transition: 0.3s;
   background-color: #000;
 }
-header ul.mega-menu li:hover::after {
+header ul.mega-menu li a:hover::after {
   width: 30%;
 }
 
@@ -85,7 +92,7 @@ header ul.mega-menu li:hover::after {
 }
 
 /* HOME *******************/
-section.home {
+#home {
   height: 100vh;
   width: 100%;
   min-height: 480px;
@@ -95,7 +102,7 @@ section.home {
   background-position: center bottom;
   background-color: #F0F0F2;
 }
-section.home .greeting {
+#home .greeting {
   position: absolute;
   left: 50%;
   bottom: 280px;
@@ -103,21 +110,21 @@ section.home .greeting {
   text-align: center;
   line-height: 2em;
 }
-section.home .greeting p .bold {
+#home .greeting p .bold {
   font-weight: 700;
   text-decoration: underline;
 }
-section.home .profile {
+#home .profile {
   position: absolute;
   left: 60px;
   bottom: 60px;
 }
-section.home .profile ul.icon {
+#home .profile ul.icon {
   display: flex;
   gap: 20px;
   padding-bottom: 20px;
 }
-section.home .profile ul.icon li {
+#home .profile ul.icon li {
   height: 24px;
   width: 24px;
   background-position: center center;
@@ -125,10 +132,10 @@ section.home .profile ul.icon li {
   cursor: pointer;
   position: relative;
 }
-section.home .profile ul.icon li span {
+#home .profile ul.icon li span {
   display: none;
 }
-section.home .profile ul.icon li:hover span {
+#home .profile ul.icon li:hover span {
   position: absolute;
   top: -115%;
   left: 50%;
@@ -141,7 +148,7 @@ section.home .profile ul.icon li:hover span {
   font-size: 12px;
   border-radius: 0.2em;
 }
-section.home .profile ul.icon li:hover span::after {
+#home .profile ul.icon li:hover span::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -152,24 +159,24 @@ section.home .profile ul.icon li:hover span::after {
   border-left: 0.3em solid transparent;
   border-right: 0.3em solid transparent;
 }
-section.home .profile ul.icon li.git-hub {
+#home .profile ul.icon li.git-hub {
   background-image: url("./../img/icon-github.svg");
 }
-section.home .profile ul.icon li.notion {
+#home .profile ul.icon li.notion {
   background-image: url("./../img/icon-notion.svg");
 }
-section.home .profile ul.icon li.e-mail {
+#home .profile ul.icon li.e-mail {
   background-image: url("./../img/icon-email.svg");
 }
-section.home .profile ul.person {
+#home .profile ul.person {
   width: fit-content;
   border-top: 2px solid #000;
   padding-top: 20px;
 }
-section.home .profile ul.person li {
+#home .profile ul.person li {
   line-height: 1.5em;
 }
-section.home .scroll-animation {
+#home .scroll-animation {
   position: absolute;
   bottom: 50px;
   left: 50%;
@@ -179,7 +186,7 @@ section.home .scroll-animation {
   flex-direction: column;
   align-items: center;
 }
-section.home .scroll-animation .icon {
+#home .scroll-animation .icon {
   margin-top: 5px;
   background: url("./../img/icon-down.svg") center center no-repeat;
   width: 24px;
@@ -196,7 +203,7 @@ section.home .scroll-animation .icon {
   }
 }
 /* ABOUT *******************/
-section.about {
+#about {
   width: 100%;
   position: relative;
   display: flex;
@@ -204,7 +211,7 @@ section.about {
   justify-content: center;
   overflow: hidden;
 }
-section.about .bg-object {
+#about .bg-object {
   width: 30.6%;
   height: 100%;
   background-color: #F5F5F5;
@@ -213,7 +220,7 @@ section.about .bg-object {
   left: 0;
   z-index: -10;
 }
-section.about .inner {
+#about .inner {
   flex-shrink: 0;
   padding-top: 180px;
   padding-bottom: 180px;
@@ -229,10 +236,10 @@ section.about .inner {
   margin-bottom: 40px;
 }
 
-section.about .inner .contents {
+#about .inner .contents {
   display: flex;
 }
-section.about .inner .contents .img {
+#about .inner .contents .img {
   display: block;
   width: 511px;
   height: 511px;
@@ -250,7 +257,7 @@ section.about .inner .contents .img {
   flex: 1;
 }
 
-section.about .inner .contents ul.info {
+#about .inner .contents ul.info {
   width: 511px;
   display: flex;
   margin-top: auto;
@@ -258,26 +265,26 @@ section.about .inner .contents ul.info {
   gap: 20px;
   font-size: 16px;
 }
-section.about .inner .contents ul.info li {
+#about .inner .contents ul.info li {
   display: flex;
 }
-section.about .inner .contents ul.info li.line {
+#about .inner .contents ul.info li.line {
   border-top: 1px solid #000;
   padding-top: 20px;
 }
-section.about .inner .contents ul.info li p.category {
+#about .inner .contents ul.info li p.category {
   flex-shrink: 0;
   width: 132px;
 }
-section.about .inner .contents ul.info li p.description {
+#about .inner .contents ul.info li p.description {
   text-align: justify;
 }
 
 /* WORKS *******************/
-section.works {
+#works {
   position: relative;
 }
-section.works .bg-object {
+#works .bg-object {
   position: absolute;
   top: 930px;
   right: 0;
@@ -286,7 +293,7 @@ section.works .bg-object {
   background-color: #F5F5F5;
   z-index: -10;
 }
-section.works .bg-object::before {
+#works .bg-object::before {
   content: "";
   display: block;
   position: absolute;
@@ -296,29 +303,66 @@ section.works .bg-object::before {
   width: 673px;
   background-color: #F5F5F5;
 }
-section.works .inner {
+#works .inner {
   padding-top: 180px;
-  padding-bottom: 410px;
+  padding-bottom: 565px;
 }
-section.works .inner .items-wrap {
+#works .inner .items-wrap {
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 240px;
 }
-section.works .inner .items-wrap .items {
+#works .inner .items-wrap .items {
   display: flex;
 }
-section.works .inner .items-wrap .items .item {
+#works .inner .items-wrap .items .item {
   width: 511px;
-  height: 541px;
-  background-color: gray;
+  height: 460px;
+  position: relative;
 }
-section.works .inner .items-wrap .items .item.right {
+#works .inner .items-wrap .items .item.right {
   transform: translateY(230px);
+}
+#works .inner .items-wrap .items .item .img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+#works .inner .items-wrap .items .item .img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  filter: grayscale(10);
+}
+#works .inner .items-wrap .items .item .img:hover img {
+  height: 120%;
+  filter: grayscale(0);
+}
+#works .inner .items-wrap .items .item .text {
+  position: absolute;
+  bottom: -80px;
+  left: 20px;
+  padding: 24px 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#works .inner .items-wrap .items .item .text .works .works-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+#works .inner .items-wrap .items .item .text .works .works-date {
+  font-size: 14px;
+  color: #A2A2A2;
+  margin-top: 14px;
 }
 
 /* FOOTER *******************/
-section.footer {
+footer {
   width: 100%;
   height: 50px;
   display: flex;
@@ -335,7 +379,7 @@ section.footer {
   .side-name {
     right: 40px;
   }
-  section.home .profile {
+  #home .profile {
     left: 40px;
   }
 }
