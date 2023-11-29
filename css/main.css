@@ -91,7 +91,7 @@ header ul.mega-menu li a:hover::after {
   font-size: 24px;
   font-weight: 300;
   white-space: nowrap;
-  z-index: -10;
+  z-index: 10;
   color: #A2A2A2;
 }
 
@@ -103,15 +103,19 @@ header ul.mega-menu li a:hover::after {
   background: url("./../img/1-home-BG.png") no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
   background-position: center bottom;
   background-color: #F0F0F2;
-  z-index: -11;
 }
 #home .greeting {
-  position: absolute;
-  left: 50%;
-  bottom: 280px;
-  transform: translateX(-50%);
+  flex: 1;
+  position: relative;
+  display: flex;
+  margin-top: 120px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   line-height: 2em;
   word-break: keep-all;
@@ -121,16 +125,17 @@ header ul.mega-menu li a:hover::after {
   text-decoration: underline;
 }
 #home .profile {
-  position: absolute;
-  left: 60px;
-  bottom: 60px;
+  position: relative;
+  margin-bottom: 60px;
 }
-#home .profile ul.icon {
+#home .profile .icon {
   display: flex;
   gap: 20px;
   padding-bottom: 20px;
+  justify-content: flex-start;
 }
-#home .profile ul.icon li {
+#home .profile .icon a {
+  display: block;
   height: 24px;
   width: 24px;
   background-position: center center;
@@ -138,10 +143,10 @@ header ul.mega-menu li a:hover::after {
   cursor: pointer;
   position: relative;
 }
-#home .profile ul.icon li span {
+#home .profile .icon a span {
   display: none;
 }
-#home .profile ul.icon li:hover span {
+#home .profile .icon a:hover span {
   position: absolute;
   top: -115%;
   left: 50%;
@@ -154,7 +159,7 @@ header ul.mega-menu li a:hover::after {
   font-size: 12px;
   border-radius: 0.2em;
 }
-#home .profile ul.icon li:hover span::after {
+#home .profile .icon a:hover span::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -165,19 +170,20 @@ header ul.mega-menu li a:hover::after {
   border-left: 0.3em solid transparent;
   border-right: 0.3em solid transparent;
 }
-#home .profile ul.icon li.git-hub {
+#home .profile .icon a.git-hub {
   background-image: url("./../img/icon-github.svg");
 }
-#home .profile ul.icon li.notion {
+#home .profile .icon a.notion {
   background-image: url("./../img/icon-notion.svg");
 }
-#home .profile ul.icon li.e-mail {
+#home .profile .icon a.e-mail {
   background-image: url("./../img/icon-email.svg");
 }
 #home .profile ul.person {
   width: fit-content;
   border-top: 2px solid #000;
   padding-top: 20px;
+  word-break: keep-all;
 }
 #home .profile ul.person li {
   line-height: 1.5em;
@@ -210,6 +216,8 @@ header ul.mega-menu li a:hover::after {
 }
 /* ABOUT *******************/
 #about {
+  padding-top: 180px;
+  padding-bottom: 180px;
   width: 100%;
   position: relative;
   display: flex;
@@ -228,8 +236,6 @@ header ul.mega-menu li a:hover::after {
 }
 #about .inner {
   flex-shrink: 0;
-  padding-top: 180px;
-  padding-bottom: 180px;
 }
 .title {
   font-size: 32px;
@@ -251,7 +257,6 @@ header ul.mega-menu li a:hover::after {
   height: 511px;
   overflow: hidden;
   background-color: gray;
-  background-image: url("./../img/2-about-profile.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -270,6 +275,7 @@ header ul.mega-menu li a:hover::after {
   flex-direction: column;
   gap: 20px;
   font-size: 16px;
+  word-break: keep-all;
 }
 #about .inner .contents ul.info li {
   display: flex;
@@ -289,71 +295,80 @@ header ul.mega-menu li a:hover::after {
 /* WORKS *******************/
 #works {
   position: relative;
-}
-#works .bg-object {
-  position: absolute;
-  top: 930px;
-  right: 0;
-  width: 50%;
-  height: 660px;
-  background-color: #F5F5F5;
-  z-index: -10;
-}
-#works .bg-object::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 673px;
-  background-color: #F5F5F5;
-}
-#works .inner {
   padding-top: 180px;
   padding-bottom: 565px;
 }
-#works .inner .items-wrap {
+#works .items-wrap {
   display: flex;
   flex-direction: column;
   gap: 240px;
 }
-#works .inner .items-wrap .items {
+#works .items-wrap .items.bg-left {
+  position: relative;
+}
+#works .items-wrap .items.bg-left::before {
+  content: "";
+  background-color: #F5F5F5;
+  position: absolute;
+  width: calc(50% + 172px);
+  height: calc(100% + 180px);
+  top: 0;
+  right: 0;
+  transform: translate(0, -60px);
+  z-index: -8;
+}
+#works .items-wrap .items .inner {
   display: flex;
 }
-#works .inner .items-wrap .items a {
+#works .items-wrap .items .inner a {
   display: block;
-  width: 511px;
-  height: 460px;
+  width: 100%;
+  max-width: 511px;
+  height: auto;
+  aspect-ratio: 1/0.8;
 }
-#works .inner .items-wrap .items a .item {
+#works .items-wrap .items .inner a .item {
   width: 100%;
   height: 100%;
   position: relative;
 }
-#works .inner .items-wrap .items a .item.right {
-  transform: translateY(230px);
+#works .items-wrap .items .inner a .item.left.bg-left {
+  position: relative;
 }
-#works .inner .items-wrap .items a .item .img {
+#works .items-wrap .items .inner a .item.left.bg-left::before {
+  content: "";
+  background-color: #F5F5F5;
+  position: absolute;
+  width: calc(100% + 120px);
+  height: calc(100% + 180px);
+  top: 0;
+  left: 0;
+  transform: translate(-60px, -60px);
+  z-index: -10;
+}
+#works .items-wrap .items .inner a .item.right {
+  transform: translateY(60%);
+}
+#works .items-wrap .items .inner a .item .img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
   cursor: pointer;
 }
-#works .inner .items-wrap .items a .item .img img {
+#works .items-wrap .items .inner a .item .img img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100%;
+  width: 100%;
   filter: grayscale(10);
 }
-#works .inner .items-wrap .items a .item .img:hover img {
+#works .items-wrap .items .inner a .item .img:hover img {
   height: 120%;
   filter: grayscale(0);
 }
-#works .inner .items-wrap .items a .item .text {
+#works .items-wrap .items .inner a .item .text {
   position: absolute;
   bottom: -80px;
   left: 20px;
@@ -361,12 +376,12 @@ header ul.mega-menu li a:hover::after {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
 }
-#works .inner .items-wrap .items a .item .text .works .works-title {
+#works .items-wrap .items .inner a .item .text .works .works-title {
   font-size: 16px;
   font-weight: 600;
   color: #000;
 }
-#works .inner .items-wrap .items a .item .text .works .works-date {
+#works .items-wrap .items .inner a .item .text .works .works-date {
   font-size: 14px;
   color: #A2A2A2;
   margin-top: 14px;
@@ -380,6 +395,8 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 1px solid #000;
+  font-size: 12px;
+  text-align: center;
 }
 
 /* PC 추가 수정 */
@@ -391,26 +408,36 @@ footer {
   .side-name {
     right: 40px;
   }
-  #home .profile {
-    left: 40px;
-  }
 }
 /* 태블릿 */
 @media (max-width: 1027px) {
-  body {
-    background-color: aliceblue;
-  }
   .inner {
     width: 100%;
   }
   header ul.mega-menu {
     gap: 0;
   }
+  #about .inner .contents {
+    flex-direction: column;
+    gap: 40px;
+  }
+  #about .inner .contents .img {
+    width: 100%;
+    max-width: 511px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  #about .inner .contents .spacing {
+    display: none;
+  }
+  #about .inner .contents ul.info {
+    width: 100%;
+  }
+  #works .items-wrap .items .inner .spacing {
+    min-width: 20px;
+  }
 }
 @media (max-width: 767px) {
-  body {
-    background-color: antiquewhite;
-  }
   .inner {
     padding-left: 20px;
     padding-right: 20px;
@@ -444,5 +471,44 @@ footer {
   }
   .side-name {
     color: #e4e4e4;
+    z-index: -11;
+  }
+  #home {
+    padding: 0 20px;
+  }
+  #home .greeting {
+    margin-top: 140px;
+  }
+  #home .profile {
+    margin-bottom: 40px;
+  }
+  #home .profile ul.person {
+    width: 100%;
+  }
+  #home .scroll-animation {
+    display: none;
+  }
+  #works {
+    padding-bottom: 280px;
+  }
+  #works .items-wrap {
+    gap: 120px;
+  }
+  #works .items-wrap .items.bg-left::before {
+    display: none;
+  }
+  #works .items-wrap .items .inner {
+    flex-direction: column;
+    gap: 120px;
+    align-items: center;
+  }
+  #works .items-wrap .items .inner a .item.left.bg-left::before {
+    display: none;
+  }
+  #works .items-wrap .items .inner a .item.right {
+    transform: translateY(0);
+  }
+  #works .items-wrap .items .inner .spacing {
+    display: none;
   }
 }
