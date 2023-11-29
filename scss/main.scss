@@ -1,6 +1,30 @@
 /* fonts *******************/
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+/* COMMON Variable *******************/
+// text, line color ////////////////////////////
+// white mode : #000,     dark mode : #fff, 
+$color-tl : #fff;
+
+// bg color ////////////////////////////////////
+// white mode : #fff,     dark mode : #292929
+$color-bg : #292929;
+// white mode : #F5F5F5,  dark mode : #0F0F0F
+$color-back-bg : #0f0f0f;
+
+// mobile side-name color //////////////////////
+// white mode : #e4e4e4,  dark mode : #595959
+$color-mobile-side-name : #595959; 
+
+// HOME icon hover pop up color ////////////////
+// white mode : rgba(0,0,0,.6),   dark mode : rgba(255,255,255,.2)
+$color-icon-hover : rgba(255,255,255,.2);
+
+// WROKS item text bg //////////////////////////
+// white mode : rgba(255,255,255,.9);,   dark mode : rgba(41, 41, 41, .9);
+$color-item-bg : rgba(41, 41, 41, .9);
+
 /* COMMON *******************/
 *{
   margin: 0;
@@ -12,6 +36,8 @@ body{
   font-family: 'Hahmlet', serif;
   font-weight: 300;
   font-size: 16px;
+  color: $color-tl;
+  background-color: $color-bg;
 }
 ul li{
   list-style: none;
@@ -28,8 +54,6 @@ a{
 
 
 
-/* COMMON Variable *******************/
-$bg-object-color : #F5F5F5;
 
 /* HEADER *******************/
 header{
@@ -41,8 +65,8 @@ header{
   padding: 0 40px;
   margin: 20px;
   position: fixed;
-  border-top: 2px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 2px solid $color-tl;
+  border-bottom: 1px solid $color-tl;
   z-index: 100;
   transition: .5s;
   .logo{
@@ -73,7 +97,7 @@ header{
           height: 3px;
           width: 0%;
           transition: .3s;
-          background-color: #000;
+          background-color: $color-tl;
         }
         &:hover{
           &::after{
@@ -113,7 +137,6 @@ header{
   padding: 0 40px;
   // +++ edit
   background-position: center bottom;
-  background-color: #F0F0F2;
   .greeting{
     flex: 1;
     position: relative;
@@ -157,7 +180,7 @@ header{
             left: 50%;
             transform: translateX(-50%);
             display: block;
-            background-color: rgba(0,0,0,.6);
+            background-color: $color-icon-hover;
             color: #fff;
             white-space: nowrap;
             padding: .2em .4em;
@@ -170,7 +193,7 @@ header{
               left: 50%;
               transform: translateX(-50%);
               border-bottom: .3em solid transparent;
-              border-top: .3em solid rgba(0,0,0,.6);;
+              border-top: .3em solid $color-icon-hover;
               border-left: .3em solid transparent;
               border-right: .3em solid transparent;
             }
@@ -189,7 +212,7 @@ header{
     }
     ul.person{
       width: fit-content;
-      border-top: 2px solid #000;
+      border-top: 2px solid $color-tl;
       padding-top: 20px;
       word-break: keep-all;
 
@@ -239,7 +262,7 @@ header{
   .bg-object{
     width: 30.6%;
     height: 100%;
-    background-color:$bg-object-color;
+    background-color:$color-back-bg;
     position: absolute;
     top:0;
     left:0;
@@ -250,9 +273,9 @@ header{
     @at-root .title{
       font-size: 32px;
       font-weight: 500;
-      color: #000;
+      color: $color-tl;
       width: 100%;
-      border-bottom: 2px solid #000;
+      border-bottom: 2px solid $color-tl;
       text-align: right;
       padding-bottom: 10px;
       margin-bottom: 40px;
@@ -287,7 +310,7 @@ header{
         li{
           display: flex;
           &.line{
-            border-top: 1px solid #000;
+            border-top: 1px solid $color-tl;
             padding-top: 20px;
           }
           p.category{
@@ -320,7 +343,7 @@ header{
         position: relative;
         &::before{
           content: '';
-          background-color: $bg-object-color;
+          background-color: $color-back-bg;
           // background-color: gray;
           position: absolute;
           width: calc(50% + 172px);
@@ -348,7 +371,7 @@ header{
                 position: relative;
                 &::before{
                   content: '';
-                  background-color: $bg-object-color;
+                  background-color: $color-back-bg;
                   position: absolute;
                   width: calc(100% + 120px);
                   height: calc(100% + 180px);
@@ -387,12 +410,12 @@ header{
               left:20px;
               padding: 24px 20px;
               width: 100%;
-              background-color: rgba(255,255,255,.9);
+              background-color: $color-item-bg;
               .works{
                 .works-title{
                   font-size: 16px;
                   font-weight: 600;
-                  color: #000;
+                  color: $color-tl;
                 }
                 .works-date{
                   font-size: 14px;
@@ -416,7 +439,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #000;
+  border-top: 1px solid $color-tl;
   font-size: 12px;
   text-align: center;
 }
@@ -521,11 +544,11 @@ footer{
     }
     ul.mega-menu{
       width: 100%;
-      border-top: 1px solid #000;
+      border-top: 1px solid $color-tl;
       gap: 0;
       li{
         flex: 1;
-        border-right: 1px solid #000;
+        border-right: 1px solid $color-tl;
         &:last-child{
           border-right: 1px solid transparent;
         }
@@ -539,7 +562,7 @@ footer{
     }
   }
   .side-name{
-    color: #e4e4e4;
+    color: $color-mobile-side-name;
     z-index: -11;
   }
   #home{

@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+  // Color Variable
+  // white mode : #000,     dark mode : #fff, 
+  const colorTl = '#fff';
+  // white mode : #fff,     dark mode : #292929
+  const colorBG = '#292929';
+
+
+
   const headerItem = document.querySelector("header");
   const homeSection = document.querySelector("#home");
   let homeSectionHeight = homeSection.offsetHeight;
@@ -10,15 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // header
   window.addEventListener('scroll', function(){
     if(this.window.scrollY > homeSectionHeight/3){
-      headerItem.style.backgroundColor = '#fff',
+      headerItem.style.backgroundColor = colorBG,
       headerItem.style.width = '100%',
       headerItem.style.margin = '0'
-      headerItem.style.borderTop = '1px solid #000'
+      headerItem.style.borderTop = '1px solid' + colorTl;
     }else(
       headerItem.style.backgroundColor = 'transparent',
       headerItem.style.width = 'calc(100% - 40px)',
       headerItem.style.margin = '20px',
-      headerItem.style.borderTop = '2px solid #000'
+      headerItem.style.borderTop = '2px solid' + colorTl
     )
   })
 
@@ -27,8 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   menuLinks.forEach(function(link) {
     link.addEventListener("click", function(e) {
-      
-
       // 부드럽게 스크롤
       e.preventDefault();
       let linkLocation = this.getAttribute('href');
