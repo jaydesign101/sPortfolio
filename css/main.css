@@ -366,7 +366,7 @@ header ul.mega-menu li a:hover::after {
   filter: grayscale(10);
 }
 #works .items-wrap .items .inner a .item .img:hover img {
-  height: 120%;
+  width: 120%;
   filter: grayscale(0);
 }
 #works .items-wrap .items .inner a .item .text {
