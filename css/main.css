@@ -489,6 +489,9 @@ footer {
   #home .scroll-animation {
     display: none;
   }
+  #about .inner .contents ul.info li p.category {
+    width: 7em;
+  }
   #works {
     padding-bottom: 280px;
   }
@@ -511,5 +514,37 @@ footer {
   }
   #works .items-wrap .items .inner .spacing {
     display: none;
+  }
+}
+@media (max-width: 359px) {
+  #home .greeting {
+    font-size: 14px;
+  }
+  #home .profile .icon {
+    padding-bottom: 10px;
+  }
+  #home .profile .icon a:hover span {
+    font-size: 10px;
+  }
+  #home .profile ul.person {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  #about .inner .contents ul.info {
+    font-size: 14px;
+  }
+  #works .items-wrap .items .inner a .item .text {
+    padding: 12px 16px;
+    bottom: -40px;
+  }
+  #works .items-wrap .items .inner a .item .text .works .works-title {
+    font-size: 14px;
+  }
+  #works .items-wrap .items .inner a .item .text .works .works-date {
+    font-size: 12px;
+    margin-top: 6px;
   }
 }

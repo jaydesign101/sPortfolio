@@ -503,7 +503,6 @@ footer{
       }
     }
   }
-
 }
 @media (max-width : 767px){
   body{
@@ -559,6 +558,19 @@ footer{
       display: none;
     }
   }
+  #about{
+    .inner{
+      .contents{
+        ul.info{
+          li{
+            p.category{
+              width: 7em
+            }
+          }
+        }
+      }
+    }
+  }
   #works{
     padding-bottom: 280px;
     .items-wrap{
@@ -604,7 +616,69 @@ footer{
     }
   }
 }
-
+@media (max-width : 359px){
+  #home{
+    .greeting{
+      font-size: 14px;
+    }
+    .profile{
+      .icon{
+        padding-bottom: 10px;
+        a{
+          &:hover{
+            span{
+              font-size: 10px;
+            }
+           
+          }
+        }
+      }
+      ul.person{
+        font-size: 14px;
+        padding-top: 10px;
+      }
+    }
+  }
+  #about{
+    .inner{
+      @at-root .title{
+        font-size: 28px;
+      }
+      .contents{
+        ul.info{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+  #works{
+    .items-wrap{
+      .items{      
+        .inner{
+          a{
+            .item{
+              .text{
+                padding: 12px 16px;
+                bottom: -40px;
+                .works{
+                  .works-title{
+                    font-size: 14px;
+                  }
+                  .works-date{
+                    font-size: 12px;
+                    margin-top: 6px;
+                  }
+                }
+              }
+            }
+          }
+        }
+  
+      }
+    }
+  }
+}
 
 
 
