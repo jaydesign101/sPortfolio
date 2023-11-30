@@ -1,31 +1,13 @@
-/* fonts *******************/
+///////////////////////////////////////////////////////////////////
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+$color-tl : #000;
+$color-back-bg : #F5F5F5;
+$color-icon-hover : rgba(0,0,0,.6);
 
-/* COMMON Variable *******************/
-// text, line color ////////////////////////////
-// white mode : #000,     dark mode : #fff, 
-$color-tl : #fff;
-
-// bg color ////////////////////////////////////
-// white mode : #fff,     dark mode : #292929
-$color-bg : #292929;
-// white mode : #F5F5F5,  dark mode : #0F0F0F
-$color-back-bg : #0f0f0f;
-
-// mobile side-name color //////////////////////
-// white mode : #e4e4e4,  dark mode : #595959
-$color-mobile-side-name : #595959; 
-
-// HOME icon hover pop up color ////////////////
-// white mode : rgba(0,0,0,.6),   dark mode : rgba(255,255,255,.2)
-$color-icon-hover : rgba(255,255,255,.2);
-
-// WROKS item text bg //////////////////////////
-// white mode : rgba(255,255,255,.9);,   dark mode : rgba(41, 41, 41, .9);
-$color-item-bg : rgba(41, 41, 41, .9);
-
-/* COMMON *******************/
+///////////////////////////////////////////////////////////////////
+/* COMMON */
 *{
   margin: 0;
   padding:0;
@@ -37,7 +19,7 @@ body{
   font-weight: 300;
   font-size: 16px;
   color: $color-tl;
-  background-color: $color-bg;
+  background-color: #fff;
 }
 ul li{
   list-style: none;
@@ -53,9 +35,10 @@ a{
 }
 
 
+///////////////////////////////////////////////////////////////////
+/* DEfAULT*/
 
-
-/* HEADER *******************/
+/* HEADER */
 header{
   display: flex;
   justify-content: space-between;
@@ -72,6 +55,7 @@ header{
   .logo{
     font-weight: 500;
     white-space: nowrap;
+    color: $color-tl;
   }
   ul.mega-menu{
     display: flex;
@@ -110,7 +94,6 @@ header{
     }
   }
 }
-
 .side-name{
   position: fixed;
   top:100px;
@@ -123,8 +106,7 @@ header{
   color: #A2A2A2;
 }
 
-
-/* HOME *******************/
+/* HOME */
 #home{
   height: 100vh;
   width: 100%;
@@ -249,7 +231,7 @@ header{
   }
 }
 
-/* ABOUT *******************/
+/* ABOUT */
 #about{
   padding-top: 180px;
   padding-bottom: 180px;
@@ -329,7 +311,7 @@ header{
   }
 }
 
-/* WORKS *******************/
+/* WORKS */
 #works{
   position: relative;
   padding-top: 180px;
@@ -410,7 +392,7 @@ header{
               left:20px;
               padding: 24px 20px;
               width: 100%;
-              background-color: $color-item-bg;
+              background-color: rgba(255,255,255,.9);
               .works{
                 .works-title{
                   font-size: 16px;
@@ -432,7 +414,7 @@ header{
   }
 }
 
-/* FOOTER *******************/
+/* FOOTER */
 footer{
   width: 100%;
   height: 50px;
@@ -445,6 +427,8 @@ footer{
 }
 
 
+///////////////////////////////////////////////////////////////////
+/* RESPONSIBLE */
 
 /* PC 추가 수정 */
 @media (max-width : 1499px){
@@ -461,8 +445,6 @@ footer{
 
 /* 태블릿 */
 @media (max-width : 1027px){
-  body{
-  }
   .inner{
     width: 100%;
   }
@@ -527,9 +509,9 @@ footer{
     }
   }
 }
+
+/* 모바일 */
 @media (max-width : 767px){
-  body{
-  }
   .inner{
     padding-left: 20px;
     padding-right: 20px;
@@ -562,7 +544,7 @@ footer{
     }
   }
   .side-name{
-    color: $color-mobile-side-name;
+    color: #e4e4e4;
     z-index: -11;
   }
   #home{
@@ -639,6 +621,8 @@ footer{
     }
   }
 }
+
+/* 해상도 낮은 모바일*/
 @media (max-width : 359px){
   #home{
     .greeting{
@@ -704,6 +688,166 @@ footer{
 }
 
 
+///////////////////////////////////////////////////////////////////
+/* THEMA */
 
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  $color-tl : #fff;
+  $color-back-bg : #0F0F0F;
+  $color-icon-hover : rgba(255,255,255,.2);
 
+  body{
+    color: $color-tl;
+    background-color: #292929;
+  }
 
+  /* HEADER *******************/
+  header{
+    border-top: 2px solid $color-tl;
+    border-bottom: 1px solid $color-tl;
+    .logo{color: $color-tl;}
+    ul.mega-menu{
+      li{
+        a{
+          &::after{background-color: $color-tl;}
+        }
+      }
+    }
+  }
+
+  /* HOME *******************/
+  #home{
+    background: url('./../img/1-home-BG_dark.png') no-repeat;
+    background-size: cover;
+    // +++ edit
+    background-position: center bottom;
+    .profile{
+      .icon{
+        a{
+          &:hover{
+            span{
+              background-color: $color-icon-hover;
+              color: #fff;
+              &::after{border-top: .3em solid $color-icon-hover;}
+            }
+          }
+        }
+        a.git-hub{background-image: url('./../img/icon-github_dark.svg');}
+        a.notion{background-image: url('./../img/icon-notion_dark.svg');}
+        a.e-mail{background-image: url('./../img/icon-email_dark.svg');}
+      }
+      ul.person{
+        border-top: 2px solid $color-tl;
+      }
+    }
+    .scroll-animation{
+      .icon{
+        background : url('./../img/icon-down_dark.svg') center center no-repeat;
+      }
+    }
+  }
+
+  /* ABOUT *******************/
+  #about{
+    .bg-object{background-color:$color-back-bg; }
+    .inner{
+      @at-root .title{
+        color: $color-tl; border-bottom: 2px solid $color-tl;
+      }
+      .contents{
+        ul.info{
+          li{
+            &.line{border-top: 1px solid $color-tl;}
+          }
+        }
+      }
+    }
+  }
+
+  /* WORKS *******************/
+  #works{
+    .items-wrap{
+      .items{      
+        &.bg-left{
+          &::before{background-color: $color-back-bg;}
+        }
+        .inner{
+          a{
+            .item{
+              &.left{
+                &.bg-left{
+                  &::before{background-color: $color-back-bg;}
+                }
+              }
+              .text{ background-color: rgba(41, 41, 41, .9);
+                .works{
+                  .works-title{color: $color-tl;}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* FOOTER *******************/
+  footer{
+    border-top: 1px solid $color-tl;
+  }
+
+  /* 반응형 *******************/
+  @media (max-width : 767px){
+    header{
+      ul.mega-menu{border-top: 1px solid $color-tl;
+        li{border-right: 1px solid $color-tl;}
+      }
+    }
+    .side-name{color: #595959;}
+    #works{
+      padding-bottom: 280px;
+      .items-wrap{
+        gap: 120px;
+        .items{
+          &.bg-left{
+            &::before{
+              display: none;
+            }
+          }
+          .inner{
+            flex-direction: column;
+            gap: 120px;
+            align-items: center;
+            a{
+              .item{
+                &.left{
+                  &.bg-left{
+                    &::before{
+                      display: none;
+                    }
+                  }
+                }
+                &.right{
+                  transform: translateY(0);
+                }
+                .img{
+                  img{
+                  }
+                  &:hover{
+                    img{
+                    }
+                  }
+                }
+              }
+            }
+            .spacing{
+              display: none;
+            }
+          }
+    
+        }
+      }
+    }
+  }
+}
