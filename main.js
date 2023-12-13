@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
 
+
+document.addEventListener("DOMContentLoaded", function() {
   const headerItem = document.querySelector("header");
   const homeSection = document.querySelector("#home");
   let homeSectionHeight = homeSection.offsetHeight;
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
       link.addEventListener("click", function(e) {
         // 브라우저 기본 이벤트 무력화
         e.preventDefault();
-        
+
         let linkLocation = this.getAttribute('href');
         var targetElement = document.querySelector(linkLocation);
         
@@ -60,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // header 메뉴 - 화면 이동 표현
   var menuLinks = document.querySelectorAll("header ul.mega-menu li a");
-
   headerMenuGoToScreen(menuLinks)
 
 })
